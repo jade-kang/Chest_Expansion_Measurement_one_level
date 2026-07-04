@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+xiphoid_env/
+.venv/
+venv/
+env/
+ssd_env/
+
+# macOS
+.DS_Store
+
+# Large/private data
+raw_videos/
+frames_raw/
+frames_all/
+exports/
+models/
+results/
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.mp4
+*.mov
+*.avi
+*.jpg
+*.jpeg
+*.png
+
+# Label Studio local data
+.label-studio/
+label-studio-data/
+
+# Temporary files
+*.log
+*.tmp
