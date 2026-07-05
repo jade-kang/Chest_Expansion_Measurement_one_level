@@ -202,3 +202,78 @@ The model does not directly predict chest circumference or chest expansion. Circ
 10. Convert pixels to centimeters using height ROI
 11. Estimate chest circumference
 12. Compare AI-based results with tape measurements
+
+## Current Dataset Plan
+
+The current `frames_all` folder contains 520 images.
+
+```text
+Total images: 520
+```
+
+The dataset consists of two sources.
+
+```text
+Legacy CE_Pilot dataset:
+S001–S019
+
+New xiphoid dataset:
+N001–N009
+```
+
+The previous CE_Pilot dataset is not reused through the old `lower_thorax_roi` annotations. Instead, all images used in the current project will be newly labeled in Label Studio using the same two-class definition:
+
+```text
+0: xiphoid_roi
+1: height_roi
+```
+
+This decision was made to keep the labeling criteria consistent across the legacy and new datasets.
+
+## Labeling Plan
+
+All images except `S019` will be labeled using the new xiphoid-level labeling rule.
+
+```text
+Labeling target:
+S001–S018
+N001–N009
+
+Excluded:
+S019
+```
+
+The total number of images for new labeling is:
+
+```text
+S001–S018: 288 images
+N001–N009: 216 images
+Total: 504 images
+```
+
+Each image will have exactly two bounding boxes:
+
+```text
+xiphoid_roi
+height_roi
+```
+
+## Train and Final Validation Split
+
+The practical dataset split for this project is:
+
+```text
+Training / fine-tuning:
+S001–S018
+N001–N004
+
+Final paper validation:
+N005–N009
+
+Excluded from final centimeter-based analysis:
+S019
+```
+
+This split keeps five newly collected subjects completely separate from model training. The final validation set will be used to compare AI-derived xiphoid-level chest expansion values with tape measurement values.
+
+The split is subject-wise. Images from the same subject are not divided across training and validation sets.
