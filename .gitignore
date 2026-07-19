@@ -39,3 +39,13 @@ label-studio-data/
 # Temporary files
 *.log
 *.tmp
+
+# timestamped measurement runs
+runs_measurement/
+
+# private metadata
+metadata/*.csv
+
+# Keep metadata templates
+!metadata/*template*.csv
+!metadata/README.md
