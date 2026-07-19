@@ -1,0 +1,46 @@
+project_root: /Users/kangjun2000/Desktop/CE_Xiphoid_Project
+
+frames_dir: frames_all
+export_json: exports/old_4lev_filtered_2roi.json
+
+yolo_output_dir: yolo_dataset
+
+classes:
+  0: xiphoid_roi
+  1: height_roi
+
+train_subjects:
+  - S001
+  - S002
+  - S003
+  - S004
+  - S005
+  - S006
+  - S007
+  - S008
+  - S009
+  - S010
+  - S011
+  - S012
+  - S013
+  - S014
+
+val_subjects:
+  - S015
+  - S016
+  - S017
+  - S018
+
+excluded_subjects:
+  - S019
+
+external_subjects:
+  - N001
+  - N002
+  - N003
+  - N004
+  - N005
+  - N006
+  - N007
+  - N008
+  - N009
